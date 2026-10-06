@@ -1,20 +1,20 @@
 pipeline{
     agent any
-    stages {
+    stages{
         stage("Clone repo"){
             steps{
-                git url: 'https://github.com/kadimasum/java-todo.git', branch: 'master'
+                git url: 'https://github.com/nabiswavalencia/java-todo', branch: 'master'
             }
         }
-        stage("Build Repo"){
-            steps{
-                sh "./gradlew build"
-            }
+    stage("Build code"){
+        steps{
+            sh './gradlew build'
         }
-        stage("Test code"){
-            steps{
-                sh "./gradlew test"
-            }
+    }
+    stage("Test Code"){
+        steps{
+            sh "./gradlew test"
         }
+    }
     }
 }
